@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ShotRequestList from '../ShotRequestList/ShotRequestList';
+import NewRequest from '../NewRequest/NewRequest'
 
 class App extends Component {
   constructor(props) {
@@ -15,12 +16,18 @@ class App extends Component {
   				'image1': 'Image 1',
           'image2': 'Image 2',
   				'id': '000001',
-          'uploadedImages': ['https://feldmarwatch.com/wp-content/uploads/2018/05/slide-ulyssee-nardin.jpg','https://feldmarwatch.com/wp-content/uploads/2018/06/home-slider-bom-june-2018-mockup.jpg']
+          'uploadedImages': ['']
   			}
   		]
     };
+    // this.addShotRequest = this.addShotRequest.bind(this);
   }
-    
+  // addShotRequest(request){
+  //   let requests = this.state.shots;
+	// 	requests.push(request);
+	// 	this.setState({shots: request});
+  // }
+
   render() {
     return (
       <div className="App">
@@ -28,6 +35,7 @@ class App extends Component {
         <ShotRequestList
           shots={this.state.shots}
         />
+        <NewRequest currentImages={this.state.shots} />
       </div>
     );
   }

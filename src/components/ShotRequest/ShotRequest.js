@@ -1,23 +1,8 @@
 import React, { Component } from 'react';
 import './ShotRequest.css';
+import ShotResponse from '../ShotResponse/ShotResponse';
 
 class ShotRequest extends Component {
-  constructor(props){
-		super(props);
-    this.state = {
-			newImage: '',
-      currentImages: this.props.shot.uploadedImages
-		};
-    this.addPhoto = this.addPhoto.bind(this);
-		this.handleAddPhoto = this.handleAddPhoto.bind(this);
-	}
-  handleAddPhoto(event){
-    this.setState({newImage: event.target.value});
-	}
-  addPhoto(){
-    this.state.currentImages.push(this.state.newImage);
-    this.setState({newImage: ''});
-	}
 
   render() {
     return (
@@ -31,14 +16,7 @@ class ShotRequest extends Component {
           image2: {this.props.shot.image2}<br/>
           id: {this.props.shot.id}</p>
         </div>
-        <div className="ShotUploads">
-          {this.state.currentImages.map(imageUrl =>
-            <img src={imageUrl}/>
-          )}
-          <br/>
-          <input type="file" onChange={this.handleAddPhoto}/>
-          <a className="button" onClick={this.addPhoto} >UPLOAD</a>
-        </div>
+        <ShotResponse images={this.props.shot.uploadedImages}/>
       </div>
     );
   }
