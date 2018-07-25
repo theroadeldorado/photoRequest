@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.button{
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  overflow: visible;
+  padding: 5px 8px;
+  color: #fff;
+  background: #a90433;
+  border: 2px solid #a90433;
+  display: inline-block;
+}
