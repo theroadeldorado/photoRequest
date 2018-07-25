@@ -5,18 +5,20 @@ class ShotRequest extends Component {
   constructor(props){
 		super(props);
     this.state = {
-			newImage: ''
+			newImage: '',
+      currentImages: this.props.shot.uploadedImages
 		};
     this.addPhoto = this.addPhoto.bind(this);
 		this.handleAddPhoto = this.handleAddPhoto.bind(this);
 	}
-  addPhoto(){
-    alert(this.state.newImage);
-    this.props.shot.uploadedImages.push(this.state.newImage);
-	}
-	handleAddPhoto(event){
+  handleAddPhoto(event){
     this.setState({newImage: event.target.value});
 	}
+  addPhoto(){
+    this.state.currentImages.push(this.state.newImage);
+    this.setState({newImage: ''});
+	}
+
   render() {
     return (
       <div className="ShotRequest">
@@ -30,7 +32,7 @@ class ShotRequest extends Component {
           id: {this.props.shot.id}</p>
         </div>
         <div className="ShotUploads">
-          {this.props.shot.uploadedImages.map(imageUrl =>
+          {this.state.currentImages.map(imageUrl =>
             <img src={imageUrl}/>
           )}
           <br/>
