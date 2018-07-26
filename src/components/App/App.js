@@ -18,9 +18,21 @@ class App extends Component {
   				'id': '000001',
           'uploadedImages': ['']
   			}
+  		],
+      newShot: [
+  			{
+          'name': '',
+  				'dateCreated': '',
+  				'dueDate': '',
+          'description': '',
+  				'image1': '',
+          'image2': '',
+  				'id': '',
+          'uploadedImages': ['']
+  			}
   		]
     };
-    // this.addShotRequest = this.addShotRequest.bind(this);
+    this.addRequest = this.addRequest.bind(this);
   }
   // addShotRequest(request){
   //   let requests = this.state.shots;
@@ -28,6 +40,13 @@ class App extends Component {
 	// 	this.setState({shots: request});
   // }
 
+  addRequest(request){
+    let requests = this.state.shots;
+    alert(requests);
+    // requests.push(request);
+    // this.setState({shots: requests});
+
+  }
   render() {
     return (
       <div className="App">
@@ -35,7 +54,7 @@ class App extends Component {
         <ShotRequestList
           shots={this.state.shots}
         />
-        <NewRequest currentImages={this.state.shots} />
+        <NewRequest newRequest={this.state.newShot} onAdd={this.addRequest}/>
       </div>
     );
   }

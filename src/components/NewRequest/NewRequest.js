@@ -4,18 +4,18 @@ import './NewRequest.css';
 class NewRequest extends Component {
   constructor(props) {
   	super(props);
-  	this.state = {
-      name: 'test',
-  		dateCreated: '',
-  		dueDate: '',
+    this.state = {
+      name: '',
+      dateCreated: '',
+      dueDate: '',
       description: '',
-  		image1: '',
+      image1: '',
       image2: '',
-  		id: '',
+      id: '',
       uploadedImages: ['']
-    }
-    this.handleChange = this.handleChange.bind(this);
+  	}
     this.addRequest = this.addRequest.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event){
     switch (event.target.id) {
@@ -53,14 +53,14 @@ class NewRequest extends Component {
       this.state.id,
       this.state.uploadedImages
     ];
+    this.props.onAdd(request);
 
-    alert(request);
   }
+
   render() {
     return (
       <div className="NewRequest">
         <h2>New Image Request</h2>
-
         <input type="text" id="name" placeholder="Request Title" onChange={this.handleChange}/>
         <input type="text" id="created" placeholder="Date Created" onChange={this.handleChange}/>
         <input type="text" id="due" placeholder="Due Date" onChange={this.handleChange}/>
