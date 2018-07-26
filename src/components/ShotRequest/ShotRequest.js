@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ShotRequest.css';
-import ShotResponse from '../ShotResponse/ShotResponse';
 
 class ShotRequest extends Component {
 
@@ -16,7 +15,6 @@ class ShotRequest extends Component {
           image2: {this.props.shot.image2}<br/>
           id: {this.props.shot.id}</p>
         </div>
-        <ShotResponse images={this.props.shot.uploadedImages}/>
       </div>
     );
   }

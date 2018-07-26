@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import FromXML from '../../xml';
 import ShotRequestList from '../ShotRequestList/ShotRequestList';
 import NewRequest from '../NewRequest/NewRequest'
 
@@ -22,17 +23,12 @@ class App extends Component {
     };
     this.addRequest = this.addRequest.bind(this);
   }
-  // addShotRequest(request){
-  //   let requests = this.state.shots;
-	// 	requests.push(request);
-	// 	this.setState({shots: request});
-  // }
 
   addRequest(request){
     let requests = this.state.shots;
     requests.push(request);
     this.setState({shots: requests});
-    console.log(this.state.shots);
+    console.log(FromXML);
   }
   render() {
     return (
