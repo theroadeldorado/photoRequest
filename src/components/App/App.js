@@ -15,19 +15,7 @@ class App extends Component {
           'description': 'description',
   				'image1': 'Image 1',
           'image2': 'Image 2',
-  				'id': '000001',
-          'uploadedImages': ['']
-  			}
-  		],
-      newShot: [
-  			{
-          'name': '',
-  				'dateCreated': '',
-  				'dueDate': '',
-          'description': '',
-  				'image1': '',
-          'image2': '',
-  				'id': '',
+  				'id': Date.now(),
           'uploadedImages': ['']
   			}
   		]
@@ -42,10 +30,9 @@ class App extends Component {
 
   addRequest(request){
     let requests = this.state.shots;
-    alert(requests);
-    // requests.push(request);
-    // this.setState({shots: requests});
-
+    requests.push(request);
+    this.setState({shots: requests});
+    console.log(this.state.shots);
   }
   render() {
     return (

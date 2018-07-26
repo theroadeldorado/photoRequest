@@ -37,24 +37,21 @@ class NewRequest extends Component {
       case 'file2':
         this.setState({image2: event.target.value});
         break;
-      case 'id':
-        this.setState({id: event.target.value});
-        break;
     }
   }
   addRequest(){
-    const request = [
-      this.state.name,
-      this.state.dateCreated,
-      this.state.dueDate,
-      this.state.description,
-      this.state.image1,
-      this.state.image2,
-      this.state.id,
-      this.state.uploadedImages
-    ];
+    const request =
+        {
+          'name': this.state.name,
+          'dateCreated': this.state.dateCreated,
+          'dueDate': this.state.dueDate,
+          'description': this.state.description,
+          'image1': this.state.image1,
+          'image2': this.state.image2,
+          'id': Date.now(),
+          'uploadedImages': ['']
+        };
     this.props.onAdd(request);
-
   }
 
   render() {
@@ -68,7 +65,6 @@ class NewRequest extends Component {
         <p>Example Image</p>
         <input type="file" id="file1" onChange={this.handleChange}/>
         <input type="file" id="file2" onChange={this.handleChange}/>
-        <input type="text" id="id" placeholder="ID Number" onChange={this.handleChange}/>
         <a className="button" onClick={this.addRequest}>New Image Request</a>
       </div>
     );

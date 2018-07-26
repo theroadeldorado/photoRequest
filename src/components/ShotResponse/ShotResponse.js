@@ -6,7 +6,8 @@ class ShotResponse extends Component {
 		super(props);
     this.state = {
 			newImage: '',
-      currentImages: this.props.images
+      currentImages: this.props.images,
+      key: Date.now()
 		};
     this.addPhoto = this.addPhoto.bind(this);
 		this.handleAddPhoto = this.handleAddPhoto.bind(this);
@@ -18,13 +19,12 @@ class ShotResponse extends Component {
     this.state.currentImages.push(this.state.newImage);
     this.setState({newImage: ''});
 	}
-
   render() {
     return (
       <div className="ShotUploads">
         <h2>Shot Response</h2>
         {this.state.currentImages.map(imageUrl =>
-          <img src={imageUrl}/>
+          <img key={this.state.key} src={imageUrl}/>
         )}
         <br/>
         <input type="file" onChange={this.handleAddPhoto}/>
