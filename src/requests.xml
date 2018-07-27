@@ -8,10 +8,10 @@
     <description>This is an example request from the xml doc.</description>
     <exampleImage1>example1.png</exampleImage1>
     <exampleImage2>example1.png</exampleImage2>
-    <uploadedImage1></uploadedImage1>
-    <uploadedImage2></uploadedImage2>
-    <uploadedImage3></uploadedImage3>
-    <uploadedImage4></uploadedImage4>
+    <uploadedImage1>image1</uploadedImage1>
+    <uploadedImage2>image2</uploadedImage2>
+    <uploadedImage3>image3</uploadedImage3>
+    <uploadedImage4>image4</uploadedImage4>
     <uploadedImage5></uploadedImage5>
   </request>
 </requests>

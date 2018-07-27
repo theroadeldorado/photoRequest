@@ -37,6 +37,8 @@ class NewRequest extends Component {
       case 'file2':
         this.setState({image2: event.target.value});
         break;
+      default:
+          break;
     }
   }
   addRequest(){
